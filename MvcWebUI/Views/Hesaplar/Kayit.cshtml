@@ -41,7 +41,7 @@
 					<span asp-validation-for="Eposta" class="text-danger"></span>
 				</div>
             </div>
-
+			
             <div class="row mb-3">
                 <label asp-for="Adres" class="col-2 col-form-label"></label>
 				<div class="col-5">
@@ -91,7 +91,9 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 	@*<partial name="_ValidationScriptsPartial" />*@
 
 	<script>

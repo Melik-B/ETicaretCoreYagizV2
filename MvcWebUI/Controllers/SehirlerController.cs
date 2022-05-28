@@ -15,7 +15,7 @@ namespace MvcWebUI.Controllers
         public IActionResult SehirlerGet(int ulkeId) // Sehirler/SehirlerGet/1
         {
             //var model = _sehirService.Query().ToList();
-            var result = _sehirService.List();
+            var result = _sehirService.List(ulkeId);
             var model = result.Data;
             return Json(model);
         }
