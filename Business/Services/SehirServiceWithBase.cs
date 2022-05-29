@@ -52,9 +52,7 @@ namespace Business.Services
         public Result<List<SehirModel>> List(int ulkeId)
         {
             var list = Query().Where(s => s.UlkeId == ulkeId).ToList();
-            if (list.Count == 0)
-                return new ErrorResult<List<SehirModel>>("Şehir bulunamadı!");
-            return new SuccessResult<List<SehirModel>>(list.Count + " adet şehir bulundu.", list);
+            return new SuccessResult<List<SehirModel>>(list);
         }
     }
 }

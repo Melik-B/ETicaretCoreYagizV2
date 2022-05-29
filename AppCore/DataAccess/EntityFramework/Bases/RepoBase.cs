@@ -88,5 +88,10 @@ namespace AppCore.DataAccess.EntityFramework.Bases
             if (save)
                 Save();
         }
+
+        public bool EntityExists(Expression<Func<TEntity, bool>> predicate) // k => k.KullaniciAdi == "cagil" && k.Sifre == "cagil"
+        {
+            return Query().Any(predicate);
+        }
     }
 }
